@@ -18,6 +18,12 @@ public class MethodRefChallenge {
         Arrays.asList(names).replaceAll(u3);
         System.out.println(Arrays.toString(names));
 
+        System.out.println("---------------Chaining lambdas--------------");
+        String name = "Joan";
+        u1.apply(name);
+        System.out.println(u1.andThen(u2).apply(name));
+//        System.out.println(name);
+
 
 
 
