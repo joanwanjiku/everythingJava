@@ -56,7 +56,39 @@ public class Main {
         System.out.println("Found index = "+ foundIndex);
         System.out.println(deck.get(foundIndex));
 
-        
+//        Replace returns a boolean
+        Card tenOfClubs = Card.getNumericCard(Suit.CLUBS, 10);
+        Collections.replaceAll(deck, tenOfClubs, tenOfHearts);
+        Card.printDeck(deck.subList(32,36), "Replaced 10 of Clubs with 10 of Hearts", 1);
+        Collections.replaceAll(deck, tenOfHearts, tenOfClubs);
+        Card.printDeck(deck.subList(32,36), "Replaced 10 of Hearts with 10 of Clubs", 1);
+
+//        frequency:- returns how many times an item appears
+        System.out.println("Tens of clubs= "+ Collections.frequency(deck, tenOfClubs));
+        System.out.println("Best Card = "+ Collections.max(deck, sortingAlgo));
+        System.out.println("worst Card = "+ Collections.min(deck, sortingAlgo));
+
+        var sortBySuit = Comparator.comparing(Card::suit).thenComparing(Card::rank);
+        deck.sort(sortBySuit);
+        Card.printDeck(deck, "Sorted deck by suit, rank", 4);
+
+//        Rotate
+        List<Card> copied = new ArrayList<>(deck.subList(0,13));
+        Collections.rotate(copied, 2);
+        System.out.println("Unrotated = "+ deck.subList(0,13));
+        System.out.println("Rotated 2= "+ copied);
+
+        copied = new ArrayList<>(deck.subList(0,13));
+        Collections.rotate(copied, -2);
+        System.out.println("Unrotated = "+ deck.subList(0,13));
+        System.out.println("Rotated -2= "+ copied);
+
+//        Swap
+        copied = new ArrayList<>(deck.subList(0,13));
+        for (int i = 0; i< copied.size() /2; i++){
+            Collections.swap(copied, i, copied.size() - 1 - i);
+        }
+        System.out.println("Manual reverse =" + copied);
 
     }
 }

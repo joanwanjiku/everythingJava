@@ -1,0 +1,50 @@
+package cardGameChallenge;
+
+import java.util.*;
+import java.util.function.Consumer;
+
+public class PokerGame {
+
+    private final List<Card> deck = Card.getStandardCard();
+    private int playerCount;
+    private int cardsInHand;
+    private List<PokerHand> pokerHands;
+    private List<Card> remainingCards;
+
+    public PokerGame(int playerCount, int cardsInHand) {
+        this.playerCount = playerCount;
+        this.cardsInHand = cardsInHand;
+        pokerHands = new ArrayList<>(cardsInHand);
+    }
+    public void startPlay() {
+        Collections.shuffle(deck);
+        Card.printDeck(deck);
+        int randomMiddle = new Random().nextInt(15,35);
+        Collections.rotate(deck, 26);
+        Card.printDeck(deck);
+
+        deal();
+        System.out.println("-------------------------------------------");
+        Consumer<PokerHand> pokerHand = PokerHand::evalHand;
+        pokerHands.forEach(pokerHand.andThen(System.out::println));
+
+        int cardsDealt = playerCount * cardsInHand;
+        int cardsRemaining = deck.size() - cardsDealt;
+        remainingCards = new ArrayList<>(Collections.nCopies(cardsRemaining, null));
+        remainingCards.replaceAll(card -> deck.get(cardsDealt + remainingCards.indexOf(card)));
+        Card.printDeck(remainingCards, "Remaining Cards", 2);
+    }
+    private void deal(){
+        Card[][] hands = new Card[playerCount][cardsInHand];
+        for (int decIndex = 0, i=0; i < cardsInHand; i++){
+            for (int j=0; j<playerCount; j++){
+                hands[j][i] = deck.get(decIndex++);
+            }
+        }
+        int playerNo = 1;
+        for (Card[] hand : hands){
+         pokerHands.add(new PokerHand(playerNo++, Arrays.asList(hand)));
+        }
+    }
+
+}
