@@ -16,6 +16,22 @@ public class Main {
         Set<Contact> phoneContacts = new HashSet<>(phones);
         printData("email set", emailContacts);
         printData("phone set", phoneContacts);
+
+        //Union
+        Set<Contact> unionAB = new HashSet<>(emailContacts);
+        unionAB.addAll(phoneContacts);
+        printData("Union", unionAB);
+
+        //intersectionAB
+        Set<Contact> intersectionAB = new HashSet<>(emailContacts);
+        intersectionAB.retainAll(phoneContacts);
+        printData("Intersection", intersectionAB);
+
+        // differenceAB
+        Set<Contact> differenceAB = new HashSet<>(emailContacts);
+        differenceAB.removeAll(phoneContacts);
+        printData("Difference", differenceAB);
+
     }
 
     public static void printData(String header, Collection<Contact> contacts){

@@ -8,6 +8,9 @@
 - Contains no duplicates.
 - May contain a single null element
 - Methods:- add, remove, clear, contains(if exists), no retrieval.
+- **Union**:- elements that are in all sets.
+- **Intersection**:-
+- **Difference**:-
 ## HashSet
 - This class uses hashing mechanisms to store items.
 - The hash code is used to support even distributions of objects in the set.
