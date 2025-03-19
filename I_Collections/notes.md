@@ -24,3 +24,13 @@
 - This class is sorted and implements the sortedSet interface, this set also implements NavigableSet
 - Elements which implement Comparable(Said to have a natural order sort, like Strings) can be elements of a treeSet.
 - If your elements don't implement Comparable, you must pass a comparator to the constructor.
+
+# Maps
+- Requires two types elements.
+- Can't contain duplicate keys.
+## Hashmap
+- unordered
+## LinkedHashMap
+- ordered by insertion order.
+## TreeMap
+- sorted map
