@@ -14,9 +14,9 @@
 ## HashSet
 - This class uses hashing mechanisms to store items.
 - The hash code is used to support even distributions of objects in the set.
-
+- non-ordered set
 ## LinkedHashSet
-- ordered set, maintains insertion order of the elements.
+- maintains insertion order of the elements.
 - extends the HashSet, maintains relationships between elements with use of doubly linked list between entries
 ## TreeSet
 - Uses a derivative of a binary search tree.

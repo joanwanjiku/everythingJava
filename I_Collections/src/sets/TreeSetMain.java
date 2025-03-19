@@ -24,7 +24,24 @@ public class TreeSetMain {
         Contact min = Collections.min(fullSet, fullSet.comparator());
         Contact max = Collections.max(fullSet, fullSet.comparator());
 
-        
+        NavigableSet<Contact> copiedSet = new TreeSet<>(fullSet);
+        System.out.println("First Element = "+ copiedSet.pollFirst());
+        System.out.println("Last Element = "+ copiedSet.pollLast());
+        copiedSet.forEach(System.out::println);
+        System.out.println("--------------------------");
+
+        Contact daffy = new Contact("Daffy duck");
+        Contact daisy = new Contact("Daisy duck");
+        Contact snoopy = new Contact("Snoopy duck");
+
+        for (Contact c : List.of(daffy,daisy, snoopy)) {
+            System.out.printf("ceiling(%s)=%s%n", c.getName(), fullSet.ceiling(c));
+            System.out.printf("higher(%s)=%s%n", c.getName(), fullSet.higher(c));
+        }
+        System.out.println("--------------------------");
+
+
+
 
 
     }
