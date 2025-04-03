@@ -35,6 +35,9 @@ public class Contact {
     public String getName() {
         return name;
     }
+    public String getNameLastFirst(){
+        return name.substring(name.indexOf(" ") + 1) + ", "+ name.substring(0, name.indexOf(" "));
+    }
     public Contact mergeContact(Contact contact) {
         Contact newContact = new Contact(name);
         newContact.emails = new HashSet<>(this.emails);
@@ -57,6 +60,24 @@ public class Contact {
         return Objects.equals(getName(), contact.getName()) &&
                 Objects.equals(emails, contact.emails)
                 && Objects.equals(phones, contact.phones);
+    }
+    public void addEmail(String companyName) {
+
+        String[] names = name.split(" ");
+        String email = "%c%s@%s.com".formatted(name.charAt(0), names[names.length - 1],
+                companyName.replaceAll(" ", "").toLowerCase());
+        if (!emails.add(email)) {
+            System.out.println(name + " already has email " + email);
+        } else {
+            System.out.println(name + " now has email " + email);
+        }
+    }
+    public void replaceEmailIfExists(String oldEmail, String newEmail) {
+
+        if (emails.contains(oldEmail)) {
+            emails.remove(oldEmail);
+            emails.add(newEmail);
+        }
     }
 
     @Override

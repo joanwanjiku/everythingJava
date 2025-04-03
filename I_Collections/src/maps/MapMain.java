@@ -50,7 +50,34 @@ public class MapMain {
                 Contact::mergeContact
                 ));
         contactMap.forEach((k, v) -> System.out.println("Key= "+ k + " Value= "+ v));
+        System.out.println("------------------------------------------------------");
+
+// compute :-
+        for (String contName: new String[] {"Daisy Duck", "Daffy Duck", "Scoorge mc"}) {
+            contactMap.compute(contName, (k,v) -> new Contact(k));
+        }
+        contactMap.forEach((k, v) -> System.out.println("Key= "+ k + " Value= "+ v));
+
+        System.out.println("-----------------------------");
+        for (String contactName : new String[] {"Daisy Duck", "Daffy Duck",
+                "Scrooge McDuck"}) {
+            contactMap.computeIfPresent(contactName, (k, v) -> {
+                v.addEmail("Fun Place"); return v; });
+        }
+        contactMap.forEach((k, v) -> System.out.println("key=" + k + ", value= " + v));
+        // replaceAll :-
+
+        System.out.println("------------------------------------------------------");
+        contactMap.replaceAll((k, v) -> {
+            String newEmail = k.replaceAll(" ", "") + "@funplace.com";
+            v.replaceEmailIfExists("DDuck@funplace.com", newEmail);
+            return v;
+        });
+        contactMap.forEach((k, v) -> System.out.println("key=" + k + ", value= " + v));
+
 
 //
+
     }
+
 }
