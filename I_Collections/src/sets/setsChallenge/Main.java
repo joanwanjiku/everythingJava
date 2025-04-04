@@ -1,4 +1,4 @@
-package setsChallenge;
+package sets.setsChallenge;
 
 import java.util.*;
 

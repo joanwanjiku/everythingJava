@@ -33,4 +33,7 @@
 ## LinkedHashMap
 - ordered by insertion order.
 ## TreeMap
-- sorted map
+- sorted map by its keys.
+
+## EnumSet, EnumMap
+- 
