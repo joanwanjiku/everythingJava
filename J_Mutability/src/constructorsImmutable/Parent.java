@@ -1,8 +1,12 @@
 package constructorsImmutable;
 
 public class Parent {
+    static {
+        System.out.println("In parent static block");
+    }
     private final String name;
     private final int age;
+    protected final int siblings;
     {
 //        name = "John"; age = 20;
         System.out.println("In parent block");
@@ -11,9 +15,10 @@ public class Parent {
 //    public Parent() {
 //    }
 
-    public Parent(String name, int age) {
+    public Parent(String name, int age, int siblings) {
         this.name = name;
         this.age = age;
+        this.siblings = siblings;
         System.out.println("In parent constructor");
     }
 

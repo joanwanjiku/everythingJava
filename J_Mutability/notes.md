@@ -28,4 +28,10 @@
 #### Instance initialization
 - an instance inializer is a block of code declared directly in a class.
 - Code gets executed when an instance of the class is created.
-- 
+#### Static initialization
+- A static initializer is called the first time the class is referenced.
+- They are declared anywhere in the body, and executed in the order of declaration.
+- Can be used to set up some environment data or log information, that is related to the class before it can be used.
+#### Record Compact, Cannonical Constructor
+- A record is a class that is immutable and final.
+- It has a canonical constructor that is a constructor with no parameters.
