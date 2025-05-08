@@ -25,4 +25,7 @@
 - when you copy methods on classes, you create a deep copy.
 - A deep copy of an array is a copy of the array itself, not a copy of the reference to the array.
 
-
+#### Instance initialization
+- an instance inializer is a block of code declared directly in a class.
+- Code gets executed when an instance of the class is created.
+- 
