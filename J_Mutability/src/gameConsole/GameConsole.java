@@ -15,9 +15,10 @@ public class GameConsole <T extends Game<? extends GamePlayer>> {
         System.out.printf("Welcome %s to %s%n", username, game.getGameName());
         return game.addPlayer(username);
     }
-    public void run() {
-        while (true) {
-            var gameActions = game.getGameActions(addPlayer());
+    public void run(int playerId) {
+        boolean done = false;
+        while (!done) {
+            var gameActions = game.getGameActions(playerId);
             System.out.println("Game Options:- ");
             for (Character c : gameActions.keySet()) {
                 String prompt = gameActions.get(c).prompt();
@@ -30,7 +31,10 @@ public class GameConsole <T extends Game<? extends GamePlayer>> {
                 System.out.println("Invalid Action");
             } else {
                 System.out.println("----------------------------------------");
-                game.executeGameAction(addPlayer(), action);
+                done = game.executeGameAction(addPlayer(), action);
+                if (!done){
+                    System.out.println("----------------------------------------");
+                }
             }
             }
         }
