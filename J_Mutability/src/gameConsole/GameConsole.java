@@ -36,6 +36,6 @@ public class GameConsole <T extends Game<? extends GamePlayer>> {
                     System.out.println("----------------------------------------");
                 }
             }
-            }
         }
+    }
 }
