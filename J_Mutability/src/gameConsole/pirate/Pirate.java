@@ -1,49 +1,23 @@
-package gameConsole;
+package gameConsole.pirate;
+
+import gameConsole.GamePlayer;
 
 import java.util.*;
 
-public class Pirate implements GamePlayer {
-    private final String name;
-    private final Map<String, Integer> gameData;
+public final class Pirate extends Combatant {
+
     private final List<String> townsVisited = new LinkedList<>();
-    private Weapon weapon;
+    private List<Loot> loot;
+    private List<Combatant> opponents;
+    private List<Feature> features;
 
     public Pirate(String name) {
-        this.name = name;
-    }
-    {
-        gameData = new HashMap<>(Map.of(
-                "health", 100,
-                "score", 0,
-                "level", 0,
-                "townIndex", 0
-        ));
+        super(name, Map.of("level", 0, "townIndex", 0));
         vistTown();
     }
-    public Weapon getCurrentWeapon(){
-        return weapon;
-    }
 
-    void setCurrentWeapon(Weapon weapon){
-        this.weapon = weapon;
-    }
-    int value(String name) {
-       return gameData.get(name);
-    }
-    private void setValue(String name, int value) {
-        gameData.put(name, value);
-    }
-    private void addValue(String name, int value) {
-        gameData.compute(name, (k, v) -> v += value);
-    }
-    private void adjustHealth(int adj) {
-        int health = value("health");
-        health += adj;
-        health = (health < 0) ? 0 : ((health > 100) ? 100 : health);
-        setValue("health", health);
-    }
     boolean useWeapon(){
-        System.out.println("Used the "+ weapon);
+        System.out.println("Used the "+ super.getCurrentWeapon());
         return visitNextTown();
     }
     boolean vistTown(){
@@ -57,18 +31,12 @@ public class Pirate implements GamePlayer {
         return true;
     }
 
-    @Override
-    public String name() {
-        return name;
-    }
-
-    @Override
-    public String toString() {
+    public String information() {
         var current = ((LinkedList<String>) townsVisited).getLast();
         String[] simpleNames = new String[townsVisited.size()];
         Arrays.setAll(simpleNames, i -> townsVisited.get(i).split(",")[0]);
         return "-----> " + current +
-                "\nPirate "+ name + " "+ gameData +
+                "\n" + super.information() +
                 "\nTownsVisited: " + Arrays.toString(simpleNames);
     }
     private boolean visitNextTown(){

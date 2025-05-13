@@ -1,4 +1,9 @@
-package gameConsole;
+package gameConsole.pirate;
+
+import gameConsole.Game;
+import gameConsole.GameAction;
+import gameConsole.pirate.Pirate;
+import gameConsole.pirate.Weapon;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -76,4 +81,10 @@ public class PirateGame extends Game<Pirate> {
         return super.executeGameAction(player, action);
     }
 
+    @Override
+    public boolean printPlayer(int playerIndex) {
+
+        System.out.println(getPlayer(playerIndex).information());
+        return false;
+    }
 }

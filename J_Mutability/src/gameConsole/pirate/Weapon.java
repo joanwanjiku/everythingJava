@@ -1,4 +1,4 @@
-package gameConsole;
+package gameConsole.pirate;
 
 import java.util.ArrayList;
 import java.util.EnumSet;

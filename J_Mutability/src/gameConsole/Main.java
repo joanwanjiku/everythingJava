@@ -1,5 +1,9 @@
 package gameConsole;
 
+import gameConsole.pirate.Pirate;
+import gameConsole.pirate.PirateGame;
+import gameConsole.pirate.Weapon;
+
 public class Main {
     public static void main(String[] args) {
 //        var console = new GameConsole(new ShooterGame("Shooter Game"));

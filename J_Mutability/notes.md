@@ -35,3 +35,9 @@
 #### Record Compact, Cannonical Constructor
 - A record is a class that is immutable and final.
 - It has a canonical constructor that is a constructor with no parameters.
+
+### Sealed classes
+- This modifier can be used for both outer types and nested types.
+- When used, a permits clause is required, which is a list of types that are allowed to inherit from the sealed type.
+- Should exist in the same package as the sealed type.
+- 
