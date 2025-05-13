@@ -9,7 +9,7 @@ public class GameConsole <T extends Game<? extends GamePlayer>> {
     public GameConsole(T game) {
         this.game = game;
     }
-    public int addPlayer() {
+    public int addPlayerTest() {
         System.out.println("Enter your username:- ");
         String username = scanner.nextLine();
         System.out.printf("Welcome %s to %s%n", username, game.getGameName());
@@ -31,7 +31,7 @@ public class GameConsole <T extends Game<? extends GamePlayer>> {
                 System.out.println("Invalid Action");
             } else {
                 System.out.println("----------------------------------------");
-                done = game.executeGameAction(addPlayer(), action);
+                done = game.executeGameAction(playerId, action);
                 if (!done){
                     System.out.println("----------------------------------------");
                 }

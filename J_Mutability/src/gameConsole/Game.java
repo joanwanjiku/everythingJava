@@ -45,13 +45,13 @@ public abstract class Game<T extends GamePlayer> {
     }
     public boolean printPlayer(int playerId) {
         GamePlayer player = players.get(playerId);
-        System.out.println(player.name());
+        System.out.println(player.name() +" is at "+ playerId);
         return false;
     }
 
     public boolean quit(int playerId) {
         GamePlayer player = players.get(playerId);
-        System.out.println(player.name() + " has quit");
+        System.out.println(player.name() + " has quit at " + playerId);
         return true;
     }
 }
