@@ -20,6 +20,13 @@
 7. FlatMap:- Transform elements.
 8. Peek:- Perform an action. for debugging.(see elements)
 
+## Stream terminal operations
+1. Count:- Count the number of elements.
+2. FindFirst:- Find the first element.
+3. FindAny:- Find any element.
+4. Min:- Find the minimum element.
+5. 
+
 - Stream is designed to let you process data in a declarative way, but it's not a declarative language.
 ## Primitive Streams
 - IntStream:- 
