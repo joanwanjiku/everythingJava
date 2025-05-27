@@ -37,6 +37,25 @@ public class MainMapping {
             System.out.println(k + " : ");
             v.forEach((k2, v2) -> System.out.println("\t" + k2 + " : " + v2.size()));
         });
+        System.out.println("\n----------------------------------");
+        long count = experienced.values().stream()
+                .flatMap(l -> l.stream())
+                .filter(s -> s.getMonthsSinceActive()<= 3)
+                .count();
+        System.out.println("Active students: " + count);
 
+        count = multiLevel.values().stream()
+                .flatMap(map -> map.values().stream()
+                        .flatMap(l -> l.stream()))
+                .filter(s -> s.getMonthsSinceActive()<= 3)
+                .count();
+        System.out.println("Active students: " + count);
+
+        count = multiLevel.values().stream()
+                .flatMap(map -> map.values().stream())
+                .flatMap(l -> l.stream())
+                .filter(s -> s.getMonthsSinceActive()<= 3)
+                .count();
+        System.out.println("Active students: " + count);
     }
 }
