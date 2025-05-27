@@ -40,5 +40,12 @@ public class MainCollect {
                         .collect(() -> new TreeSet<>(Comparator.comparing(Student::getStudentId)), TreeSet::add, TreeSet::addAll);
         youngAussuies2.forEach(student -> System.out.print(student.getStudentId()+ " "));
         System.out.println("\n----------------------------------");
+
+        String countryList = students.stream()
+                .map(Student::getCountryCode)
+                .distinct()
+                .sorted()
+                .reduce("", (r,v) -> r + " "+ v);
+        System.out.println("Country List: " + countryList);
     }
 }

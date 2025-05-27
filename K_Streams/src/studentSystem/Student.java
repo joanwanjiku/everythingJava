@@ -26,7 +26,7 @@ public class Student {
             addCourse(course, LocalDate.of(yearEnrolled, 1, 1));
         }
     }
-    private void addCourse(Course course) {
+    void addCourse(Course course) {
         addCourse(course, LocalDate.now());
     }
     private void addCourse(Course course, LocalDate enrollmentDate) {
@@ -103,7 +103,7 @@ public class Student {
                 courses);
 
         for (Course c : courses) {
-            int lecture = random.nextInt(1, c.lectureCount());
+            int lecture = random.nextInt(30, c.lectureCount());
             int year = random.nextInt(student.getYearEnrolled(), maxYear);
             int month = random.nextInt(1, 13);
             if (year == (maxYear - 1)) {
