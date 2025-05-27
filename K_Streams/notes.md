@@ -32,3 +32,8 @@
 - IntStream:- 
 - DoubleStream
 - LongStream
+
+### Optional Type
+- Optional is a container object that may or may not contain a non-null value.
+- Optional tries to solve  the problem of when no result, or no data is a perfectly valid situation vs when no result might be really an error.
+- 
