@@ -7,3 +7,10 @@
 # DateTime
 - ChronoField enum is used to represent the different fields of a date-time, such as year, month, day, hour, minute, second, and nanosecond.
 - **TemporalField vs TemporalUnit**: TemporalField represents a field of a temporal object, such as a date, time, or duration. TemporalUnit represents a unit of time, such as days, hours, or minutes.
+
+## Localization
+- `Locale` is used to specify the language, country, and variant of a locale.
+
+### ResourceBundle class
+- `ResourceBundle` class is used to manage the resources of a program, such as strings, images, and other objects.
+- 
