@@ -1,6 +1,7 @@
 package basics;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -74,6 +75,26 @@ public class Main {
         System.out.println(scanner.findInLine("[a-zA-Z]+ble"));
         System.out.println(scanner.findInLine("[a-zA-Z]+ble"));
         scanner.close();
+        System.out.println("------------------------------------------------------------");
+        String challenge2 = "^[A-Z].*\\.";
+
+        for (String s : List.of("The bike is red.",
+                "I am a new student.",
+                "hello world.",
+                "How are you?")) {
+            boolean matched = s.matches(challenge2);
+            System.out.println(matched + ": " + s);
+        }
+        System.out.println("------------------------------------------------------------");
+        String challenge3 = "^[A-Z][\\p{all}]+[.?!]$";
+
+        for (String s : List.of("The bike is red, and has flat tires.",
+                "I love being a new L.P.A. student!",
+                "Hello, friends and family: Welcome!",
+                "How are you, Mary?")) {
+            boolean matched = s.matches(challenge3);
+            System.out.println(matched + ": " + s);
+        }
     }
     private static String format(String regex, String... args) {
         int index = 0;
