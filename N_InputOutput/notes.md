@@ -7,5 +7,8 @@
 ## Glob
 - Glob is a pattern matching algorithm that is used to match files or directories based on a pattern.
 
+## Walking the file tree
+- 
+
 
 
