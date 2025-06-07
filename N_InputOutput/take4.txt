@@ -1,0 +1,11 @@
+Student ID, Country Code, Enrolled Year,Age, Gender,Experience, Course Code, Engagement Month, Engagement Year,Engagement Year
+1           US   2025   7 55MYJMC     80.00AUGUST    2025Lecture 12                    
+1           US   2025   7 55MYPYC     33.33FEBRUARY  2025Lecture 5                     
+2           IN   2021   6 32FNJMC     53.33MAY       2025Lecture 8                     
+2           IN   2021   6 32FNPYC     86.67MAY       2021Lecture 13                    
+3           GB   2018   8 60MNJMC     86.67FEBRUARY  2025Lecture 13                    
+3           GB   2018   8 60MNPYC     33.33APRIL     2020Lecture 5                     
+4           CN   2025   4 33FNJMC     93.33DECEMBER  2025Lecture 14                    
+4           CN   2025   4 33FNPYC     26.67FEBRUARY  2025Lecture 4                     
+5           US   2015   1 29UYJMC     86.67AUGUST    2017Lecture 13                    
+5           US   2015   1 29UYPYC     26.67NOVEMBER  2020Lecture 4                     
