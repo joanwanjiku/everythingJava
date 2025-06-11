@@ -10,3 +10,4 @@
 - Default priority is 5
 - Creating a thread instance:- Thread t = new Thread(); Implementing Runnable interface:- Runnable r = new Runnable();
 - **run() vs start()**:- run the code runs immediately but start() is a method that starts a thread.
+- **join()** :- It is a method that allows a thread to wait for another thread to complete.
