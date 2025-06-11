@@ -1,0 +1,5 @@
+Directory Contents: 
+/Users/joanndambiri/Documents/code/javaLessons/N_InputOutput/public
+/Users/joanndambiri/Documents/code/javaLessons/N_InputOutput/public/assets
+/Users/joanndambiri/Documents/code/javaLessons/N_InputOutput/public/assets/icons
+Generated: 2025-06-10T23:51:56.867549
